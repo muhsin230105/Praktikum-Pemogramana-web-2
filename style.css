@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial, sans-serif;
+}
+
+header {
+    background-color: rgb(21, 203, 21); /* waarna header atas*/
+    padding:  1px 0;
+    
+}
+
+nav {
+    display: flex; /*membuat filexbox (skotak headder atas)*/
+    justify-content: space-between ;/* Memisahkan logo dan menu di kiri dan kanan */
+    align-items: center; /* vertikal rata tengah */
+    padding:0 15px; /*memberi padding kiri dan kanan untuk jarak yang seimbang*/
+}
+/*menu navigasi */
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 15px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Sembunyikan Dropdown Menu pada Tampilan Kecil */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Sembunyikan menu */
+    }
+
+    /* Tampilkan ikon hamburger saat layar kecil */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+/* Aturan saat tampilan besar (hamburger disembunyikan) */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Tambahkan z-index */
+}
+/* Menampilkan hamburger pada layar kecil */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none; /* Menu default tersembunyi */
+        flex-direction: column; /* Susun menu secara vertikal */
+    }
+}
+
+/* Gaya untuk menu dropdown saat aktif pada layar kecil */
+.nav-menu.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(21, 203, 21);
+  z-index: 1000;
+}
+
+.nav-menu li {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* styling logo bosss*/
+.text {
+    margin-left: 20px; /* Tambahkan margin kiri untuk memberi jarak */
+}
+
+.logo-img {
+    width: 85px; /* Atur lebar sesuai kebutuhan */
+    height: auto; /* Agar proporsional, sesuaikan tinggi secara otomatis */
+}
+
+.logo {
+    display: flex; /*membua gambar dan logo berada dalam satu baris*/
+    align-items: center;/*vertikal rata tengah*/
+
+}
+
+/* mengatur ukuran logo pondok*/
+.logo .text h1 {
+    font-size: 25px; /*ukuran teks judul*/
+    color: white; /* waarna teks dalam heder atas bos*/
+    margin-bottom: 1%; 
+
+}
+
+.hamburger {
+    margin-left: auto; /* Pastikan hamburger ada di sebelah kanan */
+}
+
+.logo .text p {
+    font-size: 15px;
+    color:white;
+}
+
+
+.nav-menu li {
+    position: relative;
+    margin-left: 15px;
+}
+ .nav-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 10px;
+ }
+
+ /*menampilkan drop down saat di hover*/
+
+.nav-menu li:hover .dropdown {
+    display:block;
+}
+
+/*styling untuk drop down*/
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1)
+}
+
+/* Styling untuk link dalam dropdown menu */
+.dropdown li a {
+    color: #333; /* Warna teks dalam dropdown abu-abu gelap */
+    padding: 10px; /* Memberi padding pada item dropdown */
+    display: block; /* Membuat link mengambil seluruh ruang blok */
+    width: 150px; /* Lebar dropdown */
+}
+
+/* Styling saat item dropdown di-hover */
+.dropdown li a:hover {
+    background-color: #f0f0f0; /* Warna latar abu-abu muda saat di-hover */
+}
+
+.background-section {
+    background-image: url('./background.jpg'); /* Ganti dengan path foto Anda */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; 
+    margin-top: 0px; /* Tambahkan margin atas untuk memberi jarak dari header */
+    display: flex; /* Aktifkan Flexbox */
+    justify-content: flex-start; /* Secara default, tombol di samping kiri */
+    align-items: center;
+    padding: 20px;
+
+}
+/* Aturan saat ukuran layar sempit (maksimal 600px) */
+@media (max-width: 600px) {
+    .background-section {
+        justify-content: center; /* Saat layar sempit, tombol di tengah */
+    }
+}
+.buttoncog {
+    font-size: 20px;
+    background-color: rgb(21, 203, 21);
+    color: white;
+    padding: 20px 20px;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.buttoncog:hover {
+    background-color: rgb(10, 27, 10);
+}
